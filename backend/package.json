@@ -1,0 +1,30 @@
+{
+  "name": "sistema-matricula-backend",
+  "version": "1.0.0",
+  "description": "API REST para el Sistema de Matrícula Académica SENATI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "audit:db": "node scripts/auditarBaseDatos.js",
+    "migrate:academic": "node scripts/aplicarMigracionAcademica.js",
+    "seed:demo": "node scripts/seedDatosDemostracion.js",
+    "migrate:curricula": "node scripts/aplicarMigracionMallas.js",
+    "seed:curricula": "node scripts/cargarMallasDemo.js",
+    "migrate:auth": "node scripts/migrarAutenticacion.js",
+    "auth:bootstrap": "node scripts/crearAdministradorInicial.js",
+    "migrate:treasury": "node scripts/aplicarMigracionTesoreria.js",
+    "seed:treasury": "node scripts/cargarDemoTesoreria.js",
+    "seed:schedules": "node scripts/cargarHorariosDemo.js",
+    "migrate:evaluations": "node scripts/aplicarMigracionEvaluaciones.js",
+    "seed:evaluations": "node scripts/cargarDemoEvaluaciones.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
+  }
+}
