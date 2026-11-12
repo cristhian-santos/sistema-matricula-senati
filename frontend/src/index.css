@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --senati-navy: #0d233a;
+  --senati-blue: #0056b3;
+  --senati-accent: #0284c7;
+  --senati-gold: #f59e0b;
+  --bg-page: #f8fafc;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px -2px rgba(15, 35, 58, 0.08);
+  --shadow-lg: 0 10px 25px -3px rgba(15, 35, 58, 0.12);
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  .sticky-top,
+  .navbar-senati,
+  .institutional-topbar,
+  footer,
+  .d-print-none {
+    display: none !important;
+  }
+
+  body,
+  #root {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Institutional Top Bar */
+.institutional-topbar {
+  background: #091a2c;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Main Navbar */
+.navbar-senati {
+  background: linear-gradient(135deg, #0d233a 0%, #153e6b 100%);
+  border-bottom: 3px solid #0284c7;
+  box-shadow: var(--shadow-md);
+  padding: 0.75rem 0;
+}
+
+.navbar-senati .navbar-brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.3px;
+  color: #ffffff;
+}
+
+.navbar-senati .nav-link {
+  color: #cbd5e1 !important;
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navbar-senati .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.navbar-senati .nav-link.active {
+  color: #ffffff !important;
+  background-color: #0284c7 !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+}
+
+/* Institutional Cards */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  border-top-left-radius: 14px !important;
+  border-top-right-radius: 14px !important;
+  padding: 1rem 1.25rem;
+}
+
+/* Hero Welcome Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #0e2a4a 0%, #1e4a7a 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+}
+
+/* Stat Cards */
+.stat-card {
+  border-radius: 14px;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon-wrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+/* Tables */
+.table {
+  color: var(--text-main);
+  margin-bottom: 0;
+}
+
+.table th {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 0.9rem 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.table td {
+  padding: 0.95rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Avatars */
+.avatar-initials {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(2, 132, 199, 0.25);
+}
+
+/* Badges */
+.badge-status {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 20px;
+  letter-spacing: 0.2px;
+}
+
+.badge-activo {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.badge-inactivo {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.badge-matriculado {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+/* Estilos Turquesa / Celeste para Botones y Badges */
+.btn-turquesa {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-turquesa:hover {
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(6, 182, 212, 0.55);
+}
+
+.badge-turquesa {
+  background-color: rgba(6, 182, 212, 0.2) !important;
+  color: #a5f3fc !important;
+  border: 1px solid rgba(6, 182, 212, 0.45) !important;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Buttons */
+.btn-senati {
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-senati:hover {
+  background-color: #0369a1;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+}
+
+/* Modals */
+.modal-content {
+  border-radius: 18px;
+  border: none;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Form Controls */
+.form-control, .form-select {
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.92rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
